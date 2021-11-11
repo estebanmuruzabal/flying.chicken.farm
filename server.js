@@ -3,7 +3,8 @@ const app = express()
 const port = process.env.PORT || 5000
 const path = require('path')
 
-app.use(express.static(path.join(__dirname, 'build')))
+/* app.use(express.static(path.join(__dirname, 'build'))) */
+app.use(express.static(__dirname)); //here is important thing - no static directory, because all static :)
 
 //all your api code goes here
 app.get('/api', (req, res) => {
